@@ -1,0 +1,23 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/src/bin/www",
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "SLS_DEBUG": "*",
+        "TEST_ENV_VARIABLE": "Environment variable is coming across",
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}
