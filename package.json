@@ -5,9 +5,11 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "node ./src/bin/www",
-    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha",
-    "lint": "./node_modules/.bin/eslint ./src",
+    "prestart": "babel ./server/src --out-dir ./server/build",
+    "start": "node ./server/build/server.js",
+    "startdev": "nodemon --exec babel-node ./server/src/server.js",
+    "test": "jest --coverage",
+    "lint": "./node_modules/.bin/eslint ./server/src",
     "lint:fix": "./node_modules/.bin/eslint ./src --fix"
   },
   "repository": {
@@ -26,20 +28,22 @@
   },
   "homepage": "https://github.com/roicp/node-start-template#readme",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "@babel/runtime": "^7.10.3",
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "coveralls": "^3.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "mocha": "^7.1.2",
-    "nyc": "^15.0.1",
-    "sinon-chai": "^3.5.0",
-    "supertest": "^4.0.2"
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "babel-jest": "^26.1.0",
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   }
 }
