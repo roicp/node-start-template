@@ -1,9 +1,0 @@
-{
-  "editor.detectIndentation": false,
-  "editor.insertSpaces": true,
-  "editor.minimap.enabled": false,
-  "editor.tabSize": 2,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "debug.node.autoAttach": "on"
-}
