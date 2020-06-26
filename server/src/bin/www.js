@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-const debug = require('debug')('node-start-template:server');
-const http = require('http');
-const app = require('../app');
+import debug from 'debug';
+import http from 'http';
+
+import app from '../app';
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10);
@@ -36,21 +37,22 @@ const onError = (error) => {
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case 'EACCES':
-      console.error(`${bind} requires elevated privileges`);
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(`${bind} is already in use`);
-      process.exit(1);
-      break;
-    default:
-      throw error;
+  case 'EACCES':
+    console.error(`${bind} requires elevated privileges`);
+    process.exit(1);
+    break;
+  case 'EADDRINUSE':
+    console.error(`${bind} is already in use`);
+    process.exit(1);
+    break;
+  default:
+    throw error;
   }
 };
 
 const onListening = () => {
   const addr = server.address();
+
   const bind = typeof addr === 'string'
     ? `pipe ${addr}`
     : `port ${addr.port}`;
