@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "prestart": "babel ./server/src --out-dir ./server/build",
-    "start": "node ./server/build/server.js",
-    "startdev": "nodemon --exec babel-node ./server/src/server.js",
+    "start": "node ./server/build/bin/www.js",
+    "startdev": "nodemon --exec babel-node ./server/src/bin/www.js",
     "test": "jest --coverage",
     "lint": "./node_modules/.bin/eslint ./server/src",
     "lint:fix": "./node_modules/.bin/eslint ./src --fix"
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/roicp/node-start-template#readme",
   "dependencies": {
     "@babel/runtime": "^7.10.3",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
