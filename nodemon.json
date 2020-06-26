@@ -1,15 +1,15 @@
 {
-    "watch": [
-        "package.json",
-        "nodemon.json",
-        ".eslintrc.json",
-        ".babelrc",
-        ".prettierrc",
-        "/server/src/"
-    ],
-    "verbose": true,
-    "ignore": [
-        "*.test.js",
-        "*.spec.js"
-    ]
+  "watch": [
+    "package.json",
+    "nodemon.json",
+    ".eslintrc.json",
+    ".babelrc",
+    ".prettierrc",
+    "/server/src/"
+  ],
+  "verbose": true,
+  "ignore": [
+    "*.test.js",
+    "*.spec.js"
+  ]
 }
